@@ -8,6 +8,7 @@
 TRY_LOOP="20"
 
 # Global defaults and back-compat
+# Possibly /test_dags/ for our use case
 : "${AIRFLOW_HOME:="/usr/local/airflow"}"
 : "${AIRFLOW__CORE__FERNET_KEY:=${FERNET_KEY:=$(python -c "from cryptography.fernet import Fernet; FERNET_KEY = Fernet.generate_key().decode(); print(FERNET_KEY)")}}"
 : "${AIRFLOW__CORE__EXECUTOR:=${EXECUTOR:-Sequential}Executor}"
